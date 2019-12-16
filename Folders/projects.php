@@ -9,7 +9,7 @@ include_once "config.php";
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Az én lapom</title>
+    <title>Projektjeim</title>
     <link rel="stylesheet" href="http://localhost:8888/website/css/app.css">
 </head>
 <body>
@@ -27,7 +27,7 @@ include_once "config.php";
     </header>
     <main class="container">
         <div>
-            <h1>Rólam</h1>
+            <h1>Projektjeim</h1>
         </div>
     </main>
     <footer>
