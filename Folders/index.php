@@ -1,39 +1,12 @@
 <?php
 
 include_once "config.php";
+include_once "functions.php";
 
-?>
+$page = isset($_GET['p']) ? $_GET['p'] : 'home';
 
-
-<!DOCTYPE HTML>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <title>Az én lapom</title>
-    <link rel="stylesheet" href="http://localhost:8888/website/css/app.css">
-</head>
-<body>
-<header>
-        <div class="container">
-            <a class="logo" href="#">Eperjesi Attila Dávid</a>
-            <nav>
-                <ul>
-                <li><a href="http://localhost:8888/website/index.php">Rólam</a></li>
-                    <li><a href="http://localhost:8888/website/projects.php">Projektjeim</a></li>
-                    <li><a href="http://localhost:8888/website/contact.php">Kapcsolat</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main class="container">
-        <div>
-            <h1>Rólam</h1>
-        </div>
-    </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2019 MySite All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+if (file_exists("./views/{$page}.php")) {
+    include_once "./views/{$page}.php";
+} else {
+    include_once "./views/404.php";
+}
