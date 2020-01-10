@@ -18,6 +18,7 @@ $sql = "INSERT INTO utasok (uname, ules)
 values ('$uname','$ules')";
 if ($conn->query($sql)){
 echo "New record is inserted sucessfully";
+header("Location: http://localhost:8888/website/?p=utasok");
 }
 else{
 echo "Error: ". $sql ."
