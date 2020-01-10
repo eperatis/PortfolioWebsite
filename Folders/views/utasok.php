@@ -38,4 +38,15 @@
     </form>
 </div>
 
+<div>
+    <h2>Módosítás</h2>
+    <p>Add meg a módosítandó ID-át, majd add meg az új nevet és/vagy ülés számát!</p>
+    <form method="post" action="update.php">
+        ID : <input type="text" name="uid"><br><br>
+        Név : <input type="text" name="uname"><br><br>
+        Ülés : <input type="text" name="ules"><br><br>
+        <input type="submit" value="Adatok frissítése">
+    </form>
+</div>
+
 <?php include_once "_footer.php"; ?>
