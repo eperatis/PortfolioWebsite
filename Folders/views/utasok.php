@@ -41,14 +41,20 @@
 <div>
     <h2>Módosítás</h2>
     <p>
-        Add meg a módosítandó ID-át, majd add meg az új nevet és/vagy ülés számát, majd kattintson az adatok frissítésére.<br>
-        Ha törölni szeretné az utast akkor csak adja meg az ID-t és kattintson a törlésre.
+        Add meg a módosítandó ID-át, majd add meg az új nevet és/vagy ülés számát, majd kattintson az adatok frissítésére.
     </p>
     <form method="post" action="update.php">
         ID : <input type="text" name="uid"><br><br>
         Név : <input type="text" name="uname"><br><br>
         Ülés : <input type="text" name="ules"><br><br>
         <input type="submit" value="Adatok frissítése">
+    </form>
+    <p>
+        Ha törölni szeretné az utast akkor csak adja meg az ID-t és kattintson a törlésre.
+    </p>
+    <form method="post" action="delete.php">
+        ID : <input type="text" name="uid"><br><br>
+        <input type="submit" value="Törlés">
     </form>
 </div>
 
