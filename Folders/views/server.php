@@ -19,11 +19,24 @@ if (isset($_POST['reg_user'])) {
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
-  if (empty($username)) { array_push($errors, "Username is required"); }
-  if (empty($email)) { array_push($errors, "Email is required"); }
-  if (empty($password_1)) { array_push($errors, "Password is required"); }
+  if (empty($username))
+  { 
+    array_push($errors, "Username is required");
+    $errors["username"][] = "A felhasználónevet meg kell adni!"; 
+  }
+  if (empty($email)) 
+  { 
+    $errors["email"][] = "Az email címet meg kell adni.";
+    array_push($errors, "Email is required"); 
+  }
+  if (empty($password_1)) 
+  { 
+    $errors["password"][] = "Meg kell adnia egy jelszót!";
+    array_push($errors, "Password is required"); 
+  }
   if ($password_1 != $password_2) {
-	array_push($errors, "The two passwords do not match");
+    $errors["passwordconfirm"][] = "A jelszavak nem egyeznek meg!";
+	  array_push($errors, "The two passwords do not match");
   }
 
   // first check the database to make sure 
@@ -35,10 +48,12 @@ if (isset($_POST['reg_user'])) {
   if ($user) { // if user exists
     if ($user['username'] === $username) {
       array_push($errors, "Username already exists");
+      $errors["username"][] = "A felhasználónév foglalt!";
     }
 
     if ($user['email'] === $email) {
       array_push($errors, "email already exists");
+      $errors["email"][] = "Az email már használatban van!";
     }
   }
 
@@ -50,7 +65,6 @@ if (isset($_POST['reg_user'])) {
   			  VALUES('$username', '$email', '$password')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
-  	$_SESSION['success'] = "You are now logged in";
   	header('location: http://localhost:8888/website/?p=home');
   }
 }
