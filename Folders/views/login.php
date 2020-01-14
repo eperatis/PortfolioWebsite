@@ -7,8 +7,11 @@
   }
 ?>
 <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="http://localhost:8888/website/?p=login&logout" style="color: red;">logout</a> </p>
+	<div>
+            <h1>Üdvözöllek <strong><?php echo $_SESSION['username']; ?>!</strong></h1>
+            <p>Jelekezz ki a kijelentkezésre kattintva vagy jelentkezz be egy másik fiókba lent.</p>
+             <h2><a href="http://localhost:8888/website/?p=login&logout='1'" style="color: red;">Kijelentkezés</a> </h2>
+        </div>
     <?php endif ?>
 </div>
 
