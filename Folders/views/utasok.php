@@ -1,5 +1,4 @@
 <?php include_once "_header.php"; ?>
-<h1>Utasok</h1>
 <div>
     <h1>Jelenlegi utasok</h1>
     <table>
@@ -30,7 +29,7 @@
 </div>
 
 <div>
-    <h2>Utasok hozzáadása</h2>
+    <h1>Utasok hozzáadása</h1>
     <form method="post" action="connect.php">
         Név : <input type="text" name="uname"><br><br>
         Ülés : <input type="text" name="ules"><br><br>
@@ -39,19 +38,17 @@
 </div>
 
 <div>
-    <h2>Módosítás</h2>
-    <p>
-        Add meg a módosítandó ID-át, majd add meg az új nevet és/vagy ülés számát, majd kattintson az adatok frissítésére.
-    </p>
+    <h1>Módosítás</h1>
     <form method="post" action="update.php">
         ID : <input type="text" name="uid"><br><br>
         Név : <input type="text" name="uname"><br><br>
         Ülés : <input type="text" name="ules"><br><br>
         <input type="submit" value="Adatok frissítése">
     </form>
-    <p>
-        Ha törölni szeretné az utast akkor csak adja meg az ID-t és kattintson a törlésre.
-    </p>
+</div>
+
+<div>
+<h1>Törlés</h1>
     <form method="post" action="delete.php">
         ID : <input type="text" name="uid"><br><br>
         <input type="submit" value="Törlés">
