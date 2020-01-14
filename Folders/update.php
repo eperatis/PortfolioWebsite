@@ -31,17 +31,21 @@ if (!empty($uid)){
             }
         }
         else{
-            echo "Ülés nem lehet üres.";
-            die();
+            header("refresh:0.015;url=http://localhost:8888/website/?p=utasok");
+            $message = "Ülés nem lehet üres.";
+            echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }
     else{
-        echo "Név nem lehet üres.";
-        die();
+        header("refresh:0.015;url=http://localhost:8888/website/?p=utasok");
+        $message = "Név nem lehet üres.";
+        echo "<script type='text/javascript'>alert('$message');</script>";
     }
 }
 else{
-    echo "ID nem lehet üres.";
-    die();
+    header("refresh:0.015;url=http://localhost:8888/website/?p=utasok");
+    $message = "ID nem lehet üres.";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+        
 }
 ?>

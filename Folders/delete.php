@@ -26,7 +26,8 @@ if (!empty($uid)){
     }
 }
 else{
-    echo "ID nem lehet üres.";
-    die();
+    header("refresh:0.015;url=http://localhost:8888/website/?p=utasok");
+    $message = "ID nem lehet üres.";
+    echo "<script type='text/javascript'>alert('$message');</script>";
 }
 ?>
