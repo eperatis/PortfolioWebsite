@@ -8,14 +8,14 @@
 				<p id="has_error"><?php echo $error; ?></p>
 			<?php endforeach; ?>
 		<?php endif; ?>
-  	  <input type="text" name="username" value="<?php echo $username; ?>"><br>
+  	  <input type="text" name="username" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : ""; ?>"><br>
   	  <label>Email</label><br>
 		<?php if (isset($errors['email'])) : ?>
 			<?php foreach($errors['email'] as $error) : ?>
 				<p id="has_error"><?php echo $error; ?></p>
 			<?php endforeach; ?>
 		<?php endif; ?>
-  	  <input type="text" name="email" value="<?php echo $email; ?>"><br>
+  	  <input type="text" name="email" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : ""; ?>"><br>
   	  <label>Jelszó</label><br>
 		<?php if (isset($errors['password'])) : ?>
 			<?php foreach($errors['password'] as $error) : ?>

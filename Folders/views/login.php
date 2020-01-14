@@ -17,11 +17,21 @@
 
   	<div><h1>Bejelentkezés</h1></div>
 	 
-  <form method="post" action="views/login.php">
+  <form method="post" action="http://localhost:8888/website/?p=login">
   	<div>
   		<label>Felhasználónév</label><br>
-  		<input type="text" name="username"><br>
+		  <?php if (isset($errors['username'])) : ?>
+			<?php foreach($errors['username'] as $error) : ?>
+				<p id="has_error"><?php echo $error; ?></p>
+			<?php endforeach; ?>
+		<?php endif; ?>
+  		<input type="text" name="username" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : ""; ?>"><br>
   		<label>Jelszó</label><br>
+		  <?php if (isset($errors['password'])) : ?>
+			<?php foreach($errors['password'] as $error) : ?>
+				<p id="has_error"><?php echo $error; ?></p>
+			<?php endforeach; ?>
+		<?php endif; ?>
   		<input type="password" name="password"><br>
         <p>
             <input type="submit" name="login_user" value="Belépés"/><br>
