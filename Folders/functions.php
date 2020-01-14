@@ -8,3 +8,8 @@ function url($page = 'home') {
     $url = DOMAIN . "?p={$page}";
     return $url;
 }
+
+function dd($varibale) {
+    dump($varibale);
+    die("END");
+}

@@ -7,4 +7,7 @@
     </p>
     <p>Ha nincs fiókja kattintson a lenti regisztráció gombra.</p>
 </div>
+<form action="<?php echo url('regist'); ?>" method="POST">
+    <input type="submit" value="Regisztráció" />
+</form>
 <?php include_once "_footer.php"; ?>
