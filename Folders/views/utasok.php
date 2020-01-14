@@ -1,4 +1,20 @@
 <?php include_once "_header.php"; ?>
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+      header('location: http://localhost:8888/website/?p=login');
+      header("refresh:0.015;url=http://localhost:8888/website/?p=login");
+    $message = "Be kell jelentkeznie!";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: http://localhost:8888/website/?p=login");
+  }
+?>
 <div>
     <h1>Jelenlegi utasok</h1>
     <table>

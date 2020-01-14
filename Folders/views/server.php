@@ -51,6 +51,42 @@ if (isset($_POST['reg_user'])) {
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
-  	header('location: index.php');
+  	header('location: http://localhost:8888/website/?p=home');
   }
 }
+
+// LOGIN USER
+if (isset($_POST['login_user'])) {
+  $username = mysqli_real_escape_string($db, $_POST['username']);
+  $password = mysqli_real_escape_string($db, $_POST['password']);
+
+  if (empty($username)) {
+  	header("refresh:0.015;url=http://localhost:8888/website/?p=login");
+    $message = "Felhasználónév szükséges!";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+  else if (empty($password)) {
+  	header("refresh:0.015;url=http://localhost:8888/website/?p=login");
+    $message = "Jelszót meg kell adni!";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
+
+  else if (count($errors) == 0) {
+  	$password = md5($password);
+  	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+  	$results = mysqli_query($db, $query);
+  	if (mysqli_num_rows($results) == 1) {
+  	  $_SESSION['username'] = $username;
+      $_SESSION['success'] = "You are now logged in";
+      header("refresh:0.015;url=http://localhost:8888/website/?p=utasok");
+  	  $message = "Sikeres bejelentkezés!";
+      echo "<script type='text/javascript'>alert('$message');</script>";
+  	}else {
+  		header("refresh:0.015;url=http://localhost:8888/website/?p=login");
+    $message = "Rossz jelszó";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  	}
+  }
+}
+
+?>

@@ -19,7 +19,7 @@
                             Utasok
                         </a>
                     </li>
-                    <li><a <?php echo $page == 'utasok' ? 'class="active"' : ''; ?> href="<?php echo url('contact-us'); ?>">Login</a></li>
+                    <li><a <?php echo $page == 'utasok' ? 'class="active"' : ''; ?> href="<?php echo url('login'); ?>">Login</a></li>
                 </ul>
             </nav>
         </div>
