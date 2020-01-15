@@ -9,11 +9,6 @@
     $message = "Be kell jelentkeznie!";
     echo "<script type='text/javascript'>alert('$message');</script>";
   }
-  if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['username']);
-  	header("location: http://localhost:8888/website/?p=login");
-  }
 ?>
 <div>
     <h1>Jelenlegi utasok</h1>
@@ -46,7 +41,7 @@
 
 <div>
     <h1>Utasok hozzáadása</h1>
-    <form method="post" action="connect.php">
+    <form method="post" action="add.php">
         Név : <input type="text" name="uname"><br><br>
         Ülés : <input type="text" name="ules"><br><br>
         <input type="submit" value="Adatok elküldése">

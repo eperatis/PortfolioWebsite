@@ -1,6 +1,6 @@
 <?php include('server.php') ?>
 <?php include_once "_header.php"; ?>
-<form method="post" action="http://localhost:8888/website/?p=regist">
+<form method="post" action="<?php echo url('regist'); ?>">
   	<div>
   	  <label>Felhasználónév</label><br>
 		<?php if (isset($errors['username'])) : ?>
@@ -34,7 +34,7 @@
             <input type="submit" name="reg_user" value="Regisztráció"/>
         </p>
         <p>
-  		    Már regisztrált? <a href="http://localhost:8888/website/?p=login">Lépjen be!</a>
+  		    Már regisztrált? <a href="<?php echo url('login'); ?>">Lépjen be!</a>
   	    </p>
   	</div>
 </form>

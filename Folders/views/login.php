@@ -10,14 +10,14 @@
 	<div>
             <h1>Üdvözöllek <strong><?php echo $_SESSION['username']; ?>!</strong></h1>
             <p>Jelekezz ki a kijelentkezésre kattintva vagy jelentkezz be egy másik fiókba lent.</p>
-             <h2><a href="http://localhost:8888/website/?p=login&logout='1'" style="color: red;">Kijelentkezés</a> </h2>
+             <h2><a href="<?php echo url('login&logout'); ?>" style="color: red;">Kijelentkezés</a> </h2>
         </div>
     <?php endif ?>
 </div>
 
   	<div><h1>Bejelentkezés</h1></div>
 	 
-  <form method="post" action="http://localhost:8888/website/?p=login">
+  <form method="post" action="<?php echo url('login'); ?>">
   	<div>
   		<label>Felhasználónév</label><br>
 		  <?php if (isset($errors['username'])) : ?>
@@ -35,7 +35,7 @@
   		<input type="password" name="password"><br>
         <p>
             <input type="submit" name="login_user" value="Belépés"/><br>
-            Még nincs regisztrálva? <a href="http://localhost:8888/website/?p=regist">Sign up</a>
+            Még nincs regisztrálva? <a href="<?php echo url('regist'); ?>">Sign up</a>
   	    </p>
   	</div>
   </form>
