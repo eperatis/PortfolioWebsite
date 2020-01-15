@@ -1,4 +1,4 @@
-# PortfolioWebsite
+# PortfolioWebsite (unfinished project)
 PHP website (school project)
 
 How to try?
